@@ -12,13 +12,11 @@ import java.util.GregorianCalendar;
  */
 public class Util {
     public static final int DEFAULT_IDLE_TIME = 1000 * 60 * 60 * 10;
+    public static final String PROTOCOL_NAME = "drinkit";
 
     public static final String SERVER_NAME = "SERVER";
-    public static final String BARK_CLIENT_NAME = "BARK_CLIENT";
-    public static final String WEB_CAM_CLIENT_NAME = "WEB_CAM_CLIENT";
-    public static final String WEB_VIEW_CLIENT_NAME = "WEB_VIEW_CLIENT";
-    public static final String MUSIC_CLIENT_NAME = "WEB_MUSIC_CLIENT";
-    public static final String WEB_VIEW_WATER_CLIENT = "WEB_VIEW_WATER_CLIENT";
+    public static final String MUSIC_CLIENT_NAME = "MUSIC_CLIENT";
+    public static final String WEB_VIEW_WATER_CLIENT = "WEB_WATER_CLIENT";
     public static final String WATER_CLIENT = "WATER_CLIENT";
 
     public static JSONObject convertToJSon(String data) {

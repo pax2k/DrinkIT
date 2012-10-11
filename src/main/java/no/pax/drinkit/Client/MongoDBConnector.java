@@ -13,11 +13,13 @@ import java.net.UnknownHostException;
 /**
  * Created: rak
  * Date: 03.10.12
+ *
+ * todo update, cleanup
  */
 public class MongoDBConnector {
     final String localhost = "localhost";
     final int port = 27017;
-    final String dbName = "cosmo";
+    final String dbName = "drinkit";
     final String todayDate = Util.getTodayDate();
     private DBCollection collection;
 

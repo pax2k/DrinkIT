@@ -1,11 +1,11 @@
 package no.pax.drinkit;
 
-import no.pax.drinkit.server.CosmoServer;
+import no.pax.drinkit.server.DrinkServer;
 
 import java.util.Scanner;
 
 public class Main {
-    CosmoServer server;
+    DrinkServer server;
 
     public Main() {
         try {
@@ -24,7 +24,7 @@ public class Main {
 
             public void run() {
                 try {
-                    server = new CosmoServer();
+                    server = new DrinkServer();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

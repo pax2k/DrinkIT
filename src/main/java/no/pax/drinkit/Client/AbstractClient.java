@@ -50,11 +50,11 @@ public abstract class AbstractClient implements WebSocket.OnTextMessage {
 
         WebSocketClient client = factory.newWebSocketClient();
         client.setMaxIdleTime(Util.DEFAULT_IDLE_TIME);
-        client.setProtocol("cosmo");
+        client.setProtocol(Util.PROTOCOL_NAME);
 
         final String host = "localhost";
         final int port = 8080;
-        final String connectionPath = "ws://" + host + ":" + port + "/cosmo/";
+        final String connectionPath = "ws://" + host + ":" + port + "/"+ Util.PROTOCOL_NAME +"/";
 
         return connection = client.open(new URI(connectionPath), this).get();
     }

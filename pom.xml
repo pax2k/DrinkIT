@@ -2,6 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>DrinkIT</name>
+
     <groupId>no.pax.drinkit.server</groupId>
     <artifactId>drinkit</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -11,14 +13,22 @@
         <jetty-version>7.5.0.v20110901</jetty-version>
     </properties>
 
-    <name>websocket</name>
-    <url>http://maven.apache.org</url>
+    <developers>
+        <developer>
+            <id>rak</id>
+            <name>Raymond Koteng</name>
+            <organization>KnowIT</organization>
+            <organizationUrl>http://knowit.no</organizationUrl>
+            <email>rak@knowit.no</email>
+            <timezone>GMT+1</timezone>
+        </developer>
+    </developers>
 
     <repositories>
         <repository>
-            <id>project.local</id>
-            <name>project</name>
-            <url>file:${project.basedir}/repo</url>
+            <id>DrinkITRepo</id>
+            <name>DrinkIT repo</name>
+            <url>http://projects.knowit.no/nexus/content/groups/DrinkITRepo</url>
         </repository>
 
         <repository>
@@ -32,13 +42,12 @@
         <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <!-- best lock down version of the plugin too -->
-            <configuration>
-                <source>1.5</source>
-                <target>1.5</target>
-            </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -78,12 +87,12 @@
         <dependency>
             <groupId>com.bridj</groupId>
             <artifactId>bridj</artifactId>
-            <version>1.0</version>
+            <version>0.7-120301</version>
         </dependency>
         <dependency>
             <groupId>com.juv</groupId>
-            <artifactId>juv</artifactId>
-            <version>1.0</version>
+            <artifactId>juv-webcam-sdk</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>de.huxhorn.sulky</groupId>
@@ -95,12 +104,11 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>2.9.1</version>
         </dependency>
-      <dependency>
+        <dependency>
             <groupId>com.phidgets</groupId>
             <artifactId>phidget</artifactId>
             <version>2.1</version>
         </dependency>
-
     </dependencies>
 
     <profiles>
@@ -120,13 +128,8 @@
                                 <argument>-Xmn256m</argument>
                                 <argument>-XX:+PrintCommandLineFlags</argument>
                                 <argument>-verbose:gc</argument>
-                                <!--<argument>-XX:+PrintGCDetails</argument>-->
-                                <!--<argument>-XX:+PrintGCDateStamps</argument>-->
                                 <argument>-XX:+UseParallelOldGC</argument>
                                 <argument>-XX:-UseAdaptiveSizePolicy</argument>
-                                <!--<argument>-XX:+UseConcMarkSweepGC</argument>-->
-                                <!--<argument>-XX:+UnlockExperimentalVMOptions</argument>-->
-                                <!--<argument>-XX:+UseG1GC</argument>-->
                                 <argument>-cp</argument>
                                 <classpath/>
                                 <argument>no.pax.drinkit.Main</argument>
@@ -139,7 +142,7 @@
         </profile>
 
         <profile>
-            <id>webcam</id>
+            <id>waterPump</id>
             <build>
                 <plugins>
                     <plugin>
@@ -154,23 +157,17 @@
                                 <argument>-Xmn256m</argument>
                                 <argument>-XX:+PrintCommandLineFlags</argument>
                                 <argument>-verbose:gc</argument>
-                                <!--<argument>-XX:+PrintGCDetails</argument>-->
-                                <!--<argument>-XX:+PrintGCDateStamps</argument>-->
                                 <argument>-XX:+UseParallelOldGC</argument>
                                 <argument>-XX:-UseAdaptiveSizePolicy</argument>
-                                <!--<argument>-XX:+UseConcMarkSweepGC</argument>-->
-                                <!--<argument>-XX:+UnlockExperimentalVMOptions</argument>-->
-                                <!--<argument>-XX:+UseG1GC</argument>-->
                                 <argument>-cp</argument>
                                 <classpath/>
-                                <argument>no.pax.drinkit.Client.WebCamClient</argument>
+                                <argument>no.pax.drinkit.Client.WaterPumpClient</argument>
                             </arguments>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
-
     </profiles>
 </project>
 

@@ -34,6 +34,8 @@ public class WaterPumpClient extends AbstractClient {
                 System.out.println("TURN PUMP OFF");
                 connection.communicateWithPort(false);
             }
+        }  else if (Util.SERVER_NAME.equals(from)) {
+            System.out.println("Registration: " + value);
         }
     }
 }

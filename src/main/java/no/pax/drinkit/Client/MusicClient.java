@@ -32,7 +32,7 @@ public class MusicClient extends AbstractClient {
             final String from = String.valueOf(object.get("from"));
             if (Util.SERVER_NAME.equals(from)) {
                 System.out.println("MusicClient registration done");
-            } else if (from.equals(Util.WEB_VIEW_CLIENT_NAME)) {
+            } else if (from.equals(Util.WEB_VIEW_WATER_CLIENT)) {
                 final String value = Util.getValueFromJSon(object, "value");
 
                 System.out.println("PLAY MUSIC: " + value);

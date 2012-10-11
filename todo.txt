@@ -7,7 +7,7 @@ DONE Send larger image, can be a bug in Jetty.
 Web/clients:
 Handle reconnect
 Implement "ping" (if needed)
-Refactor all music-playing clients to use the same mp3-player
+DONE Refactor all music-playing clients to use the same mp3-player
 
 Javascript:
 DONE Gather all constants to a var field
